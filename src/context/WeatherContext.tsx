@@ -27,7 +27,7 @@ export default function WeatherInfoProvider({ children }) {
   const { formattedDate, currentTime } = useDate(date);
 
   // Function to update city name and fetch weather data
-  const collectCityName = (cName: string) => {
+  const collectCityName = (cName) => {
     setCityName(cName);
     fetchWeatherData(cName); // Fetch weather data based on city input
   };
@@ -38,7 +38,7 @@ export default function WeatherInfoProvider({ children }) {
     latitude = null,
     longitude = null
   ) {
-    const apiKey = "00a4965e8c7b8a499b89751899a69436"; // OpenWeather API Key
+    const apiKey = process.env.REACT_APP_WEATHER_API_KEY; // OpenWeather API Key
     let apiUrl;
 
     // Construct API URL based on provided city name or coordinates
@@ -123,7 +123,7 @@ export default function WeatherInfoProvider({ children }) {
   }
 
   // Function to handle errors in geolocation request
-  function ShowError(error: GeolocationPositionError) {
+  function ShowError(error) {
     switch (error.code) {
       case error.PERMISSION_DENIED:
         alert("User denied the request for Geolocation.");
