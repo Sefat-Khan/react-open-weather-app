@@ -38,7 +38,7 @@ export default function WeatherInfoProvider({ children }) {
     latitude = null,
     longitude = null
   ) {
-    const apiKey = process.env.REACT_APP_WEATHER_API_KEY; // OpenWeather API Key
+    const apiKey = import.meta.env.VITE_WEATHER_API_KEY; // OpenWeather API Key
     let apiUrl;
 
     // Construct API URL based on provided city name or coordinates
