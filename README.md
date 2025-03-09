@@ -35,7 +35,7 @@ npm install
 
 Create a .env file in the root directory and add your OpenWeatherMap API key:
 
-REACT_APP_WEATHER_API_KEY=your_api_key_here
+VITE_WEATHER_API_KEY=your_api_key_here
 
 Start the development server:
 
